@@ -2,10 +2,14 @@
 #include "clase_punto.h"
 using namespace std;
 
-// Constructor basico
+// Constructores
 Punto::Punto(double x,double y){
 	this->x = x;
 	this->y = y;
+}
+Punto::Punto(){
+	this->x = 0;
+	this->y = 0;
 }
 
 // Rule of three

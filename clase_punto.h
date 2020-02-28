@@ -7,7 +7,8 @@ private:
 	double x;
 	double y;
 public:
-	Punto(double x,double y);// Constructor simple
+	Punto();
+	Punto(double x,double y);
 
 	// Rule of five
 	Punto(const Punto &p);// Constructor copia
