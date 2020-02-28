@@ -12,6 +12,7 @@ public:
 	// Rule of five
 	Punto(const Punto &p);// Constructor copia
 	~Punto();// Destructor
+	Punto& operator=(const Punto &p);
 
 	// Geters
 	double getx();
@@ -23,6 +24,7 @@ public:
 	// Trasladar
 	void trasladar(double a, double b);
 	void trasladar(const Punto &p);
+
 
 	void print();
 };

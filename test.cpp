@@ -24,9 +24,18 @@ p2.trasladar(2,2);
 p2.print();
 cout<<endl;
 
+cout<<"Igualamos dos puntos: "<<endl;
+p2 = p1;
+p2.print();
+cout<<endl;
+
+
 cout<<"Sumandolo al primer punto vale: "<<endl;
 p2.trasladar(p1);
 p2.print();
 cout<<endl;
+
+cout<<"P1 no ha variado: "<<endl;
+p1.print();
 
 }

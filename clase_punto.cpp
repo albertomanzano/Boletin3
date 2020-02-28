@@ -8,15 +8,24 @@ Punto::Punto(double x,double y){
 	this->y = y;
 }
 
+// Rule of three
 // Constructor copia
 Punto::Punto(const Punto &p){
 	this->x = p.x;
 	this->y = p.y;
 }
-
 // Funcion destruir
 Punto::~Punto(){
 	cout<<"Destruido un punto"<<endl;
+}
+// Funcion asignacion
+Punto& Punto::operator=(const Punto &p)
+{
+	if (this != &p ){
+		this->x = p.x;
+		this->y = p.y;
+	}
+	return *this;
 }
 
 // Funcion imprimir
