@@ -3,9 +3,9 @@
 #include "clase_triangulo.h"
 using namespace std;
 
-int main(){
-Punto p1 = Punto(2,3);
-Punto p2 = Punto(p1);
+// Constructores
+Triangulo::Triangulo(){
+	this->ptos = new Punto[3];
+}
 
-Triangulo triang;
 }
