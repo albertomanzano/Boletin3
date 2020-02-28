@@ -1,0 +1,51 @@
+#include <iostream>
+#include "clase_punto.h"
+using namespace std;
+
+// Constructor basico
+Punto::Punto(double x,double y){
+	this->x = x;
+	this->y = y;
+}
+
+// Constructor copia
+Punto::Punto(const Punto &p){
+	this->x = p.x;
+	this->y = p.y;
+}
+
+// Funcion destruir
+Punto::~Punto(){
+	cout<<"Destruido un punto"<<endl;
+}
+
+// Funcion imprimir
+void Punto::print(){
+	cout<<"X: "<<this->x<<" Y: "<<this->y<<endl;
+}
+
+// Funciones geter
+double Punto::getx(){
+	return this->x;
+}
+double Punto::gety(){
+	return this->y;
+}
+
+//Funciones seter
+void Punto::setx(double x){
+	this->x = x;
+}
+void Punto::sety(double y){
+	this->y = y;
+}
+
+// Funciones trasladar
+void Punto::trasladar(double a, double b){
+	this->x = this->x+a;
+	this->y = this->y+b;
+}
+void Punto::trasladar(const Punto &p){
+	this->x = this->x+p.x;
+	this->y = this->y+p.y;
+}
