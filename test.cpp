@@ -1,5 +1,6 @@
 #include <iostream>
 #include "clase_punto.h"
+#include "clase_triangulo.h"
 using namespace std;
 
 int main(){
