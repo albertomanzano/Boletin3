@@ -3,23 +3,39 @@
 #include "clase_triangulo.h"
 using namespace std;
 
+// Constructor por defecto
 Triangulo::Triangulo(){
 	this->ptos = new Punto[3];
 }
+// Constructor con puntos
 Triangulo::Triangulo(const Punto &a, const Punto &b, const Punto &c){
-	cout<<"Apunta direccion "<<this<<endl;
-	
-		this->ptos = new Punto[3];
-		cout<<"Creando triangulo direccion "<<this<<endl;
-		cout<<"Apuntando a: "<<this->ptos<<endl;
-		cout<<"Asignando valores: "<<endl;
-		this->ptos[0] = a;
-		this->ptos[1] = b;
-		this->ptos[2] = c;
-		cout<<endl;
+	this->ptos = new Punto[3];
+	this->ptos[0] = a;
+	this->ptos[1] = b;
+	this->ptos[2] = c;
 }
+// Constructores copia
 Triangulo::Triangulo(const Triangulo &t){
 	cout<<"Copiando"<<endl;
+	this->ptos = new Punto[3];
+	(*this) = t;
+}
+// Constructor array puntos
+Triangulo::Triangulo(Punto* &p){
+	this->ptos = new Punto[3];
+	this->ptos[0] = p[0];
+	this->ptos[1] = p[1];
+	this->ptos[2] = p[2];
+}
+// Constructor array doubles
+Triangulo::Triangulo(const double* &p){
+	this->ptos = new Punto[3];
+	this->ptos[0].setx(p[0]);
+	this->ptos[0].sety(p[1]);
+	this->ptos[1].setx(p[2]);
+	this->ptos[1].sety(p[3]);
+	this->ptos[2].setx(p[4]);
+	this->ptos[2].sety(p[5]);
 }
 
 Triangulo& Triangulo::operator=(const Triangulo &triangulo){

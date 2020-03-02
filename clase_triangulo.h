@@ -9,6 +9,8 @@ public:
 	Triangulo();
 	Triangulo(const Punto &a, const Punto &b, const Punto &c);
 	Triangulo(const Triangulo &t);
+	Triangulo(Punto* &p);
+	Triangulo(const double* &p);
 	Triangulo& operator=(const Triangulo& triangulo);
 
 	~Triangulo();
