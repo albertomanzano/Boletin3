@@ -54,6 +54,17 @@ Triangulo::~Triangulo(){
 	cout<<"Destruido un  triangulo direccion "<<this<<endl;
 	cout<<endl;
 }
+void Triangulo::setPtos(Punto &a, Punto &b, Punto &c){
+	this->ptos[0] = a;
+	this->ptos[1] = b;
+	this->ptos[2] = c;
+
+}
+void Triangulo::setPtos(Punto* &p){
+	this->ptos[0] = p[0];
+	this->ptos[1] = p[1];
+	this->ptos[2] = p[2];
+}
 
 void Triangulo::print(){
 	cout<<"Coordenadas"<<endl;

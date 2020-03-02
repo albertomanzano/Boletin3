@@ -12,9 +12,11 @@ public:
 	Triangulo(Punto* &p);
 	Triangulo(double* &p);
 	Triangulo& operator=(const Triangulo& triangulo);
-
 	~Triangulo();
+
 	void print();
+	void setPtos(Punto &a,Punto &b,Punto &c);
+	void setPtos(Punto* &a);
 	void direccion();
 };
 #endif
