@@ -28,8 +28,11 @@ Triangulo::Triangulo(Punto* &p){
 	this->ptos[2] = p[2];
 }
 // Constructor array doubles
-Triangulo::Triangulo(const double* &p){
+Triangulo::Triangulo(double* &p){
+	cout<<"Direccion de p:"<<&p<<endl;
+	cout<<"Direccion a la que apunta p:"<<p<<endl;
 	this->ptos = new Punto[3];
+	cout<<"Direccion triangulo:"<<(this)<<endl;
 	this->ptos[0].setx(p[0]);
 	this->ptos[0].sety(p[1]);
 	this->ptos[1].setx(p[2]);
