@@ -21,5 +21,6 @@ cout<<endl;
 triangulo.print();
 cout<<"Asignamos valor al punto"<<endl;
 Punto p2;
-p2 = triangulo.getPto(2);
+triangulo.setPto(2,p2);
+triangulo.print();
 }

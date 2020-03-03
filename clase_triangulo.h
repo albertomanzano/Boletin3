@@ -18,6 +18,7 @@ public:
 	void setPtos(Punto &a,Punto &b,Punto &c);
 	void setPtos(Punto* &a);
 	Punto getPto(int i);
+	void setPto(int i, Punto &a);
 	void direccion();
 };
 #endif

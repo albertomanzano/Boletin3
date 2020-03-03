@@ -69,6 +69,10 @@ void Triangulo::setPtos(Punto* &p){
 Punto Triangulo::getPto(int i){
 	return this->ptos[i];
 }
+
+void Triangulo::setPto(int i, Punto &a){
+	this->ptos[i] = a;
+}
 void Triangulo::print(){
 	cout<<"Coordenadas"<<endl;
 	for (int i=0;i<3;i++) (this->ptos)[i].print();
