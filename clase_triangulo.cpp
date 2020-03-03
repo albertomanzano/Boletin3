@@ -73,6 +73,14 @@ Punto Triangulo::getPto(int i){
 void Triangulo::setPto(int i, Punto &a){
 	this->ptos[i] = a;
 }
+
+double Triangulo::area(){
+	double aux1,aux2,aux3;
+	aux1 = this->ptos[0].getx()*this->ptos[1].gety()-this->ptos[0].gety()*this->ptos[1].getx();
+	aux2 = this->ptos[0].getx()*this->ptos[2].gety()-this->ptos[0].gety()*this->ptos[2].getx();
+	aux3 = this->ptos[1].getx()*this->ptos[2].gety()-this->ptos[1].gety()*this->ptos[2].getx();
+	return (aux1-aux2+aux3)/2;
+}
 void Triangulo::print(){
 	cout<<"Coordenadas"<<endl;
 	for (int i=0;i<3;i++) (this->ptos)[i].print();
