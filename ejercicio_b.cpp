@@ -23,57 +23,71 @@ double sum(int n,double* &v){
 	return suma;
 }
 
+
 // Lectura datos
-void lectura(char filename[], int &n, int* &p){
-	ifstream fe;// creamos un fichero de entrada
-	fe.open(filename);//Apertura del fichero
-	if (fe.bad()){//Comprobamos errores
+int lectura(char filename[], int &n, int* &p){
+	ifstream fe(filename);// creamos un fichero de entrada
+	if (!fe){
+		cout<<"ERROR: file doesn't exists"<<endl;
+		return 8;
+		}
+	else if (fe.bad()){//Comprobamos errores
 	        cout << "ERROR: cannot open "<< filename<<endl;
+		return 8;
 	}
-	// Iteramos el fichero
-	fe>>n; // Dimension del fichero
-	p = new int[n];
-	for (int i=0;i<n;i++){
-	        fe>>p[i];
-	}
-	fe.close();
-}
-// Lectura datos
-void lectura(char filename[], int &n, float* &p){
-	ifstream fe;// creamos un fichero de entrada
-	fe.open(filename);//Apertura del fichero
-	if (fe.bad()){//Comprobamos errores
-	        cout << "ERROR: cannot open "<< filename<<endl;
-	}
-	// Iteramos el fichero
-	fe>>n; // Dimension del fichero
-	p = new float[n];
-	for (int i=0;i<n;i++){
-	        fe>>p[i];
+	else{
+		// Iteramos el fichero
+		fe>>n; // Dimension del fichero
+		p = new int[n];
+		for (int i=0;i<n;i++) fe>>p[i];
 	}
 	fe.close();
 }
 
 // Lectura datos
-void lectura(char filename[], int &n, double* &p){
-	ifstream fe;// creamos un fichero de entrada
-	fe.open(filename);//Apertura del fichero
-	if (fe.bad()){//Comprobamos errores
+int lectura(char filename[], int &n, float* &p){
+	ifstream fe(filename);// creamos un fichero de entrada
+	if (!fe){
+		cout<<"ERROR: file doesn't exists"<<endl;
+		return 8;
+		}
+	else if (fe.bad()){//Comprobamos errores
 	        cout << "ERROR: cannot open "<< filename<<endl;
+		return 8;
 	}
-	// Iteramos el fichero
-	fe>>n; // Dimension del fichero
-	p = new double[n];
-	for (int i=0;i<n;i++){
-	        fe>>p[i];
+	else{
+		// Iteramos el fichero
+		fe>>n; // Dimension del fichero
+		p = new float[n];
+		for (int i=0;i<n;i++) fe>>p[i];
 	}
 	fe.close();
 }
+// Lectura datos
+int lectura(char filename[], int &n, double* &p){
+	ifstream fe(filename);// creamos un fichero de entrada
+	if (!fe){
+		cout<<"ERROR: file doesn't exists"<<endl;
+		return 8;
+		}
+	else if (fe.bad()){//Comprobamos errores
+	        cout << "ERROR: cannot open "<< filename<<endl;
+		return 8;
+	}
+	else{
+		// Iteramos el fichero
+		fe>>n; // Dimension del fichero
+		p = new double[n];
+		for (int i=0;i<n;i++) fe>>p[i];
+	}
+	fe.close();
+}
+
 
 // Menu
 void Menu(){
-	int op = 0;// Opcion elegida
-	char filename[] = "datos.txt";
+	int op;// Opcion elegida
+	char filename[30];
 	int *p1;
 	float *p2;
 	double *p3;
@@ -81,17 +95,16 @@ void Menu(){
 while (op!=3){
 
 	cin.clear();
-        cout<<"Nombre del fichero del que se van a leer los datos: "<<endl;
-
-
-        cin.clear();
         cout<<"Tipo de dato del fichero:"<<endl;
         cout<<"0: int"<<endl;
         cout<<"1: float"<<endl;
         cout<<"2: double"<<endl;
         cout<<"3: Salir"<<endl;
-
         cin>>op;
+
+	cin.clear();
+        cout<<"Nombre del fichero del que se van a leer los datos: "<<endl;
+	cin>>filename;
         cin.clear();
 
 
