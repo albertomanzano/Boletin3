@@ -15,13 +15,20 @@ float sum(int n,float* &v){
 	return suma;
 }
 
+// Tipo double
+double sum(int n,double* &v){
+	double suma = 0;
+	for (int i = 0;i<n;i++) suma+=v[i];
+	return suma;
+}
+
 int main(){
 int dim = 2000;
 
-float suma1;
-float *p1 = new float[dim];
-for (int i=0;i<dim;i++) p1[i] = 1;
+double suma1;
+double *p1 = new double[dim];
+for (int i=0;i<dim;i++) p1[i] = 0.5;
 suma1 = sum(dim,p1);
-cout<<"Suma floats: "<<suma1<<endl;
+cout<<"Suma double: "<<suma1<<endl;
 
 }
