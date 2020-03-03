@@ -6,11 +6,13 @@ using namespace std;
 Punto::Punto(double x,double y){
 	this->x = x;
 	this->y = y;
+	cout<<"Direccion punto creado"<<this<<endl;
 	this->print();
 }
 Punto::Punto(){
 	this->x = 0;
 	this->y = 0;
+	cout<<"Direccion punto creado"<<this<<endl;
 	this->print();
 }
 
@@ -19,6 +21,7 @@ Punto::Punto(){
 Punto::Punto(const Punto &p){
 	this->x = p.x;
 	this->y = p.y;
+	cout<<"Direccion punto creado"<<this<<endl;
 	this->print();
 }
 // Funcion destruir

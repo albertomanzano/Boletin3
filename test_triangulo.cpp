@@ -17,11 +17,9 @@ cout<<endl;
 cout<<"Ahora vamos con los triangulos"<<endl;
 Triangulo triangulo = Triangulo(p);
 delete[] p;
-triangulo.print();
 cout<<endl;
-cout<<"Creo tres Puntos"<<endl;
-Punto* p2;
-p2 = new Punto[3];
-triangulo.setPtos(p2);
 triangulo.print();
+cout<<"Asignamos valor al punto"<<endl;
+Punto p2;
+p2 = triangulo.getPto(2);
 }
