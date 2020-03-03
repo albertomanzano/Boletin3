@@ -39,21 +39,6 @@ void lectura(char filename[], int &n, int* &p){
 	fe.close();
 }
 // Lectura datos
-void lectura(char filename[], int &n, double* &p){
-	ifstream fe;// creamos un fichero de entrada
-	fe.open(filename);//Apertura del fichero
-	if (fe.bad()){//Comprobamos errores
-	        cout << "ERROR: cannot open "<< filename<<endl;
-	}
-	// Iteramos el fichero
-	fe>>n; // Dimension del fichero
-	p = new double[n];
-	for (int i=0;i<n;i++){
-	        fe>>p[i];
-	}
-	fe.close();
-}
-// Lectura datos
 void lectura(char filename[], int &n, float* &p){
 	ifstream fe;// creamos un fichero de entrada
 	fe.open(filename);//Apertura del fichero
@@ -69,11 +54,68 @@ void lectura(char filename[], int &n, float* &p){
 	fe.close();
 }
 
-int main(){
-char filename[] = "datos.txt";
-int dim;
-float* p;
-lectura(filename,dim,p);
-for (int i = 0; i<dim; i++) cout<<p[i]<<endl;
+// Lectura datos
+void lectura(char filename[], int &n, double* &p){
+	ifstream fe;// creamos un fichero de entrada
+	fe.open(filename);//Apertura del fichero
+	if (fe.bad()){//Comprobamos errores
+	        cout << "ERROR: cannot open "<< filename<<endl;
+	}
+	// Iteramos el fichero
+	fe>>n; // Dimension del fichero
+	p = new double[n];
+	for (int i=0;i<n;i++){
+	        fe>>p[i];
+	}
+	fe.close();
+}
 
+// Menu
+void Menu(){
+	int op = 0;// Opcion elegida
+	char filename[] = "datos.txt";
+	int *p1;
+	float *p2;
+	double *p3;
+	int dim;
+while (op!=3){
+
+	cin.clear();
+        cout<<"Nombre del fichero del que se van a leer los datos: "<<endl;
+
+
+        cin.clear();
+        cout<<"Tipo de dato del fichero:"<<endl;
+        cout<<"0: int"<<endl;
+        cout<<"1: float"<<endl;
+        cout<<"2: double"<<endl;
+        cout<<"3: Salir"<<endl;
+
+        cin>>op;
+        cin.clear();
+
+
+        switch (op)
+        {
+        	case 0:
+			lectura(filename,dim,p1);
+			for (int i = 0; i<dim; i++) cout<<p1[i]<<endl;
+                	break;
+        	case 1:
+			lectura(filename,dim,p2);
+			for (int i = 0; i<dim; i++) cout<<p2[i]<<endl;
+			break;
+		case 2:
+			lectura(filename,dim,p3);
+			for (int i = 0; i<dim; i++) cout<<p3[i]<<endl;
+			break;
+		case 3:
+			break;
+	}
+
+}// Cierra while
+}// Cierra funcion Menu()
+
+int main(){
+	Menu();
 }
