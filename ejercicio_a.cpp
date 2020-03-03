@@ -17,6 +17,11 @@ double area(double lado1,double lado2){
 	return (lado1*lado2);
 }
 
+//Area del triangulo
+double area(float base, float altura){
+	return (base*altura/2.);
+}
+
 // Area del trapecio
 double area(double h,
 	    double base1,
@@ -27,9 +32,8 @@ double area(double h,
 
 
 int main(){
-char name[9] = "cuadrado";
 double a;
-a = area(1.f);
+a = area(1.f,2.f);
 cout<<"El area es: "<<a<<endl;
 
 }
