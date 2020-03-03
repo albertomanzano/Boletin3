@@ -2,13 +2,16 @@
 #include "math.h"
 using namespace std;
 
-double area_circulo(double radio){
+double area(double radio){
 	return (M_PI*radio*radio);
+}
+double area(double lado1,double lado2){
+	return (lado1*lado2);
 }
 
 int main(){
-double area;
-area = area_circulo(1);
-cout<<"El area es: "<<area<<endl;
+double a;
+a = area(3,4);
+cout<<"El area es: "<<a<<endl;
 
 }
