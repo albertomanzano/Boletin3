@@ -74,3 +74,40 @@ double Malla:: area (){
     }
     return a;
 }
+void Malla::estadisticas(){
+	double size, area, quality;
+	double avgsize=0, avgarea=0, avgquality=0;
+	double maxsize=0, maxarea=0, maxquality=0;
+	double minsize=100, minarea=100, minquality=100;
+	for (int i=0; i<this->nt;i++){
+	this->T[i].estadisticas(size,area,quality);
+		// size
+		if (size>maxsize) maxsize=size;
+		if (size<minsize) minsize=size;
+		// area
+		if (area>maxarea) maxarea=area;
+		if (area<minarea) minarea=area;
+		// quality
+		if (quality>maxquality) maxquality=quality;
+		if (quality<minquality) minquality=quality;
+	avgsize+=size;
+	avgarea+=area;
+	avgquality+=quality;
+	}
+	avgsize = avgsize/(double) (this->nt);
+	avgarea = avgarea/(double) (this->nt);
+	avgquality = avgquality/(double) (this->nt);
+cout<<"Maximum triangle size: "<<maxsize<<endl;
+cout<<"Minimum triangle size: "<<minsize<<endl;
+cout<<"Average triangle size: "<<avgsize<<endl;
+cout<<endl;
+cout<<"Maximum triangle area: "<<maxarea<<endl;
+cout<<"Minimum triangle area: "<<minarea<<endl;
+cout<<"Average triangle area: "<<avgarea<<endl;
+cout<<endl;
+cout<<"Maximum triangle quality: "<<maxquality<<endl;
+cout<<"Minimum triangle quality: "<<minquality<<endl;
+cout<<"Average triangle quality: "<<avgquality<<endl;
+cout<<endl;
+}
+

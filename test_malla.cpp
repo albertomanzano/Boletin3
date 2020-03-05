@@ -44,5 +44,5 @@ int main(){
 
     FichIn.close();
 
-    cout<< geom.area()<< endl;
+   geom.estadisticas();
 }

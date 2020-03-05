@@ -19,6 +19,7 @@ class Malla{
         int numelement();
         bool tsize(double &armalla, double &smax, double &smin);
         double area();
+	void estadisticas();
 
 };
 #endif
