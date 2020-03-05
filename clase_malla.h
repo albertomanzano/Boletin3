@@ -11,15 +11,22 @@ class Malla{
         int nt;
         Triangulo *T;
     public:
+	// Constructor
         Malla(int &nelem);
-        Malla(int &nelem, Triangulo* &elementos);
+	// Destructor
         ~Malla();
+
+	// Setters
         void Setelement(int k, Triangulo &Tk);
 	void Setelement(int k,Punto &p1,Punto &p2, Punto &p3);
+
+	// ?
         int numelement();
         bool tsize(double &armalla, double &smax, double &smin);
-        double area();
-	void estadisticas();
+
+	// Funciones
+        double area();// Calculo area
+	void estadisticas();// Estadisticas de la malla
 
 };
 #endif

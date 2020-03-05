@@ -3,7 +3,7 @@
 #include "clase_triangulo.h"
 #include "math.h"
 using namespace std;
-
+// Constructores
 // Constructor por defecto
 Triangulo::Triangulo(){
 	this->ptos = new Punto[3];
@@ -38,18 +38,21 @@ Triangulo::Triangulo(double* &p){
 	this->ptos[2].sety(p[5]);
 }
 
+// Operador =
 Triangulo& Triangulo::operator=(const Triangulo &triangulo){
-	this->ptos[0] = triangulo.ptos[0];
-	this->ptos[1] = triangulo.ptos[1];
-	this->ptos[2] = triangulo.ptos[2];
+	if (this!=&triangulo){
+		this->ptos[0] = triangulo.ptos[0];
+		this->ptos[1] = triangulo.ptos[1];
+		this->ptos[2] = triangulo.ptos[2];
+	}
 	return(*this);
 }
-
-
+// Operador destruccion
 Triangulo::~Triangulo(){
 	delete[] this->ptos;
-	cout<<endl;
 }
+
+// Setters
 void Triangulo::setPtos(Punto &a, Punto &b, Punto &c){
 	this->ptos[0] = a;
 	this->ptos[1] = b;
@@ -61,15 +64,16 @@ void Triangulo::setPtos(Punto* &p){
 	this->ptos[1] = p[1];
 	this->ptos[2] = p[2];
 }
-
-Punto Triangulo::getPto(int i){
-	return this->ptos[i];
-}
-
 void Triangulo::setPto(int i, Punto &a){
 	this->ptos[i] = a;
 }
 
+// Getters
+Punto Triangulo::getPto(int i){
+	return this->ptos[i];
+}
+
+// Funciones 
 double Triangulo::area(){
 	double aux1,aux2,aux3;
 	aux1 = this->ptos[0].getx()*this->ptos[1].gety()-this->ptos[0].gety()*this->ptos[1].getx();
@@ -113,6 +117,7 @@ int Triangulo::intersecar(const Triangulo &t){
 	return count;
 }
 
+// Impresion
 void Triangulo::print(){
 	cout<<"Coordenadas"<<endl;
 	for (int i=0;i<3;i++) (this->ptos)[i].print();

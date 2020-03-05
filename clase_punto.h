@@ -7,17 +7,20 @@ private:
 	double x;
 	double y;
 public:
-	Punto();
-	Punto(double x,double y);
-
-	// Rule of five
+	// Constructores
+	Punto();// Por defecto
+	Punto(double x,double y);// Por coordenadas
 	Punto(const Punto &p);// Constructor copia
-	~Punto();// Destructor
+
+	// Destructor
+	~Punto();
+	// Operador =
 	Punto& operator=(const Punto &p);
 
 	// Geters
 	double getx();
-	double gety();
+	double gety()
+;
 	// Setters
 	void setx(double x);
 	void sety(double y);
@@ -28,6 +31,8 @@ public:
 
 
 	void print();
+
+	// Distancia
 	double distancia(const Punto &p);
 };
 #endif

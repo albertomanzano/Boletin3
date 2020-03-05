@@ -65,6 +65,6 @@ void Punto::trasladar(const Punto &p){
 double Punto::distancia(const Punto &p){
 	double aux1,aux2;
 	aux1 = (this->x-p.x)*(this->x-p.x);
-	aux2 = (this->x-p.y)*(this->x-p.y);
+	aux2 = (this->y-p.y)*(this->y-p.y);
 	return (sqrt(aux1+aux2));
 }

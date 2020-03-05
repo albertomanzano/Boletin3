@@ -14,12 +14,6 @@ Malla::Malla (int &nelem){
     }
 }
 
-// A partir de un puntero de objetos Triangulo ==========================================
-
-Malla::Malla (int &nelem, Triangulo* &elementos){
-    for (int k = 0; k < nelem; k++) this-> T[k] = elementos[k];
-}
-
 // Destructor ==========================================================================
 
 Malla::~Malla(){
