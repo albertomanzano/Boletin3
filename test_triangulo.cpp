@@ -4,23 +4,20 @@
 using namespace std;
 
 int main(){
-cout<<"1. Creo los puntos"<<endl;
-
 double* p = new double[6];
-p[0] = 2;
-p[1] = 0;
+p[0] = 1;
+p[1] = 2;
 p[2] = 3;
-p[3] = 4;
-p[4] = -2;
+p[3] = -4;
+p[4] = -4;
 p[5] = 5;
-cout<<endl;
-cout<<"Ahora vamos con los triangulos"<<endl;
 Triangulo triangulo = Triangulo(p);
 delete[] p;
-cout<<endl;
 triangulo.print();
-cout<<"Calculamos area"<<endl;
-double area;
-area = triangulo.area();
+double area = triangulo.area();
 cout<<"El area del triangulo es: "<<area<<endl;
+double perimetro = triangulo.perimetro();
+cout<<"El perimetro del triangulo es: "<<perimetro<<endl;
+double calidad = triangulo.calidad();
+cout<<"La calidad del triangulo es: "<<calidad<<endl;
 }

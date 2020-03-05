@@ -1,6 +1,7 @@
 #include <iostream>
 #include "clase_punto.h"
 #include "clase_triangulo.h"
+#include "math.h"
 using namespace std;
 
 // Constructor por defecto
@@ -74,18 +75,27 @@ double Triangulo::area(){
 	aux1 = this->ptos[0].getx()*this->ptos[1].gety()-this->ptos[0].gety()*this->ptos[1].getx();
 	aux2 = this->ptos[0].getx()*this->ptos[2].gety()-this->ptos[0].gety()*this->ptos[2].getx();
 	aux3 = this->ptos[1].getx()*this->ptos[2].gety()-this->ptos[1].gety()*this->ptos[2].getx();
-	return (aux1-aux2+aux3)/2;
+	return abs((aux1-aux2+aux3)/2);
 }
 double Triangulo:: perimetro(){
 	double lado1,lado2,lado3;
 	lado1 = this->ptos[0].distancia(this->ptos[1]);
-	cout<<"Lado1: "<<lado1<<endl;
 	lado2 = this->ptos[0].distancia(this->ptos[2]);
-	cout<<"Lado2: "<<lado2<<endl;
 	lado3 = this->ptos[1].distancia(this->ptos[2]);
-	cout<<"Lado3: "<<lado3<<endl;
 	return (lado1+lado2+lado3);
 }
+double Triangulo:: calidad(){
+	double lado,lado2,lado3,calidad,cuadrado;
+	lado = this->ptos[0].distancia(this->ptos[1]);
+	lado2 = this->ptos[0].distancia(this->ptos[2]);
+	lado3 = this->ptos[1].distancia(this->ptos[2]);
+	cuadrado = lado*lado;
+	cout<<"Lado1: "<<lado<<endl;
+	cout<<"Cuadrado: "<<cuadrado<<endl;
+	calidad = (this->area()*4*sqrt(3));
+	return calidad;
+}
+
 void Triangulo::print(){
 	cout<<"Coordenadas"<<endl;
 	for (int i=0;i<3;i++) (this->ptos)[i].print();
