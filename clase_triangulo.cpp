@@ -85,15 +85,21 @@ double Triangulo:: perimetro(){
 	return (lado1+lado2+lado3);
 }
 double Triangulo:: calidad(){
-	double lado,lado2,lado3,calidad,cuadrado;
-	lado = this->ptos[0].distancia(this->ptos[1]);
+	double lado1,lado2,lado3,calidad;
+	lado1 = this->ptos[0].distancia(this->ptos[1]);
 	lado2 = this->ptos[0].distancia(this->ptos[2]);
 	lado3 = this->ptos[1].distancia(this->ptos[2]);
-	cuadrado = lado*lado;
-	cout<<"Lado1: "<<lado<<endl;
-	cout<<"Cuadrado: "<<cuadrado<<endl;
-	calidad = (this->area()*4*sqrt(3));
+	calidad = (this->area()*4*sqrt(3))/(lado1*lado1+lado2*lado2+lado3*lado3);
 	return calidad;
+}
+void Triangulo::estadisticas(double &perimetro, double &area, double &calidad){
+	double lado1,lado2,lado3;
+	lado1 = this->ptos[0].distancia(this->ptos[1]);
+	lado2 = this->ptos[0].distancia(this->ptos[2]);
+	lado3 = this->ptos[1].distancia(this->ptos[2]);
+	calidad = (this->area()*4*sqrt(3))/(lado1*lado1+lado2*lado2+lado3*lado3);
+	perimetro = (lado1+lado2+lado3);
+	area = this->area();
 }
 
 void Triangulo::print(){
