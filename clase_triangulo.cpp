@@ -45,6 +45,7 @@ Triangulo& Triangulo::operator=(const Triangulo &triangulo){
 	this->ptos[0] = triangulo.ptos[0];
 	this->ptos[1] = triangulo.ptos[1];
 	this->ptos[2] = triangulo.ptos[2];
+	return(*this);
 }
 
 
