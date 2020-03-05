@@ -21,6 +21,7 @@ public:
 	void setPto(int i, Punto &a);
 	double area();
 	double perimetro();
+	double calidad();
 	void direccion();
 };
 #endif
