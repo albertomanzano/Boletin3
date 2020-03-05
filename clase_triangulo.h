@@ -20,6 +20,7 @@ public:
 	Punto getPto(int i);
 	void setPto(int i, Punto &a);
 	double area();
+	double perimetro();
 	void direccion();
 };
 #endif

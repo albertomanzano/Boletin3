@@ -76,6 +76,16 @@ double Triangulo::area(){
 	aux3 = this->ptos[1].getx()*this->ptos[2].gety()-this->ptos[1].gety()*this->ptos[2].getx();
 	return (aux1-aux2+aux3)/2;
 }
+double Triangulo:: perimetro(){
+	double lado1,lado2,lado3;
+	lado1 = this->ptos[0].distancia(this->ptos[1]);
+	cout<<"Lado1: "<<lado1<<endl;
+	lado2 = this->ptos[0].distancia(this->ptos[2]);
+	cout<<"Lado2: "<<lado2<<endl;
+	lado3 = this->ptos[1].distancia(this->ptos[2]);
+	cout<<"Lado3: "<<lado3<<endl;
+	return (lado1+lado2+lado3);
+}
 void Triangulo::print(){
 	cout<<"Coordenadas"<<endl;
 	for (int i=0;i<3;i++) (this->ptos)[i].print();
