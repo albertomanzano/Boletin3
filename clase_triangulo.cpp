@@ -102,6 +102,17 @@ void Triangulo::estadisticas(double &perimetro, double &area, double &calidad){
 	area = this->area();
 }
 
+int Triangulo::intersecar(const Triangulo &t){
+	double tol = 10e-6;
+	int count=0;
+	for (int i = 0;i<3;i++){
+		if ((this->ptos[i].distancia(t.ptos[0]))<tol) count++;
+		if ((this->ptos[i].distancia(t.ptos[1]))<tol) count++;
+		if ((this->ptos[i].distancia(t.ptos[2]))<tol) count++;
+	}
+	return count;
+}
+
 void Triangulo::print(){
 	cout<<"Coordenadas"<<endl;
 	for (int i=0;i<3;i++) (this->ptos)[i].print();

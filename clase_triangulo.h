@@ -22,6 +22,7 @@ public:
 	double area();
 	double perimetro();
 	double calidad();
+	int intersecar(const Triangulo &t);
 	void estadisticas(double &perimetro,double &area,double &calidad);
 	void direccion();
 };
