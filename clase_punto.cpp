@@ -6,14 +6,10 @@ using namespace std;
 Punto::Punto(double x,double y){
 	this->x = x;
 	this->y = y;
-	cout<<"Direccion punto creado"<<this<<endl;
-	this->print();
 }
 Punto::Punto(){
 	this->x = 0;
 	this->y = 0;
-	cout<<"Direccion punto creado"<<this<<endl;
-	this->print();
 }
 
 // Rule of three
@@ -21,12 +17,9 @@ Punto::Punto(){
 Punto::Punto(const Punto &p){
 	this->x = p.x;
 	this->y = p.y;
-	cout<<"Direccion punto creado"<<this<<endl;
-	this->print();
 }
 // Funcion destruir
 Punto::~Punto(){
-	cout<<"Destruido un punto direccion "<<this<<endl;
 }
 // Funcion asignacion
 Punto& Punto::operator=(const Punto &p)
