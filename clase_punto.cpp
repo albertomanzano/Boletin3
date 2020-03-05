@@ -1,5 +1,6 @@
 #include <iostream>
 #include "clase_punto.h"
+#include "math.h"
 using namespace std;
 
 // Constructores
@@ -60,4 +61,10 @@ void Punto::trasladar(double a, double b){
 void Punto::trasladar(const Punto &p){
 	this->x = this->x+p.x;
 	this->y = this->y+p.y;
+}
+double Punto::distancia(const Punto &p){
+	double aux1,aux2;
+	aux1 = (this->x-p.x)*(this->x-p.x);
+	aux2 = (this->x-p.y)*(this->x-p.y);
+	return (sqrt(aux1+aux2));
 }

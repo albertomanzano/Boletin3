@@ -28,5 +28,6 @@ public:
 
 
 	void print();
+	double distancia(const Punto &p);
 };
 #endif
